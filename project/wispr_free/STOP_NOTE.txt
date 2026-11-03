@@ -1,6 +1,0 @@
-To stop WisprFree after starting it in background:
-- open Task Manager
-- find `pythonw.exe` or `python.exe`
-- end the WisprFree process
-
-If you want, a dedicated stop script can be added too.

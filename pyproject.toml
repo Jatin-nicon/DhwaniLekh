@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dhwanilekh"
+version = "0.1.0"
+description = "Fast, local-first, privacy-focused open-source voice-to-text dictation for desktop."
+readme = "README.md"
+authors = [
+    { name = "Jatin Kumar & DhwaniLekh Contributors" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = [
+    "dictation",
+    "speech-to-text",
+    "voice-typing",
+    "whisper",
+    "faster-whisper",
+    "transcription",
+    "accessibility",
+    "local-ai",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Adaptive Technologies",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+    "faster-whisper>=1.0.0",
+    "sounddevice>=0.4.6",
+    "soundfile>=0.12.1",
+    "numpy>=1.24.0",
+    "keyboard>=0.13.5",
+    "pyperclip>=1.8.2",
+    "pyautogui>=0.9.54",
+    "pyttsx3>=2.90",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "flake8>=6.0.0",
+    "black>=23.0.0",
+]
+
+[project.scripts]
+dhwanilekh = "dhwanilekh.app:main"
+
+[project.urls]
+Homepage = "https://github.com/Jatin-nicon/DhwaniLekh"
+Repository = "https://github.com/Jatin-nicon/DhwaniLekh.git"
+Issues = "https://github.com/Jatin-nicon/DhwaniLekh/issues"
+Changelog = "https://github.com/Jatin-nicon/DhwaniLekh/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,9 +1,0 @@
-faster-whisper
-sounddevice
-soundfile
-numpy
-keyboard
-pyperclip
-pyautogui
-pyttsx3
-psutil
