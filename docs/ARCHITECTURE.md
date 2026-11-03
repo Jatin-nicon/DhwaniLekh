@@ -76,3 +76,4 @@ While the initial MVP targets Windows desktop environments, the core architectur
 - **Linux**: Replacing `keyboard` hooks with global input daemons or Wayland/evdev hooks; replacing `pyautogui` paste with `wl-copy`/`xdotool`.
 - **macOS**: Utilizing Accessibility APIs and AppleScript for injection.
 - **Streaming Audio**: Transitioning from batch chunking to streaming VAD chunks for real-time transcription displays.
+

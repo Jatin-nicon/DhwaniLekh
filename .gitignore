@@ -15,12 +15,11 @@ dist/
 htmlcov/
 .tox/
 
-# Virtual environments & legacy local folders
+# Virtual environments
 .venv/
 venv/
 ENV/
 env/
-project/
 
 # Local settings & secrets
 settings.json

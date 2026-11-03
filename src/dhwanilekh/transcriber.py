@@ -48,3 +48,4 @@ class Transcriber:
             beam_size=1,
         )
         return " ".join(segment.text.strip() for segment in segments).strip()
+

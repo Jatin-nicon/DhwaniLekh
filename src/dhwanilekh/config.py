@@ -45,3 +45,4 @@ class Config:
             path = Path("settings.json")
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(self.to_dict(), indent=2), encoding="utf-8")
+

@@ -38,3 +38,4 @@ class FeedbackService:
                 self._engine.runAndWait()
             except Exception:
                 pass
+

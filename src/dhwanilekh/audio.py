@@ -81,3 +81,4 @@ class AudioRecorder:
         audio = np.concatenate(self.audio_frames, axis=0)
         sf.write(str(self.temp_audio_path), audio, self.sample_rate)
         return self.temp_audio_path
+

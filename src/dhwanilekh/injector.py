@@ -26,3 +26,4 @@ class TextInjector:
             pyperclip.copy(text)
             time.sleep(0.05)
             pyautogui.hotkey("ctrl", "v")
+

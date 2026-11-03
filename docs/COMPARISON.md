@@ -24,3 +24,4 @@ This document explains where **DhwaniLekh** fits in the ecosystem of dictation s
 1. **True Privacy**: Sensitive emails, patient notes, proprietary code, and personal thoughts should not be streamed to third-party commercial cloud APIs. DhwaniLekh processes all speech locally on your CPU/GPU.
 2. **Zero Subscription Fees**: High-quality voice dictation should be accessible to everyone without recurring monthly payments.
 3. **Hackable & Extensible**: Built entirely in Python with clean, modular components. Anyone can plug in custom punctuation rules, connect their favorite local LLM (like Ollama or llama.cpp), or adapt it to their personal workflows.
+

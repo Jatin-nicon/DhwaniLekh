@@ -28,3 +28,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic clipboard paste and typing injection into active desktop applications.
 - Text-to-speech audio status feedback via `pyttsx3`.
 - Configuration persistence with `settings.json`.
+

@@ -32,3 +32,4 @@ Instead, please report it privately:
    - Steps or proof-of-concept script to reproduce
    - Potential impact
 3. **Response timeline**: We will acknowledge receipt of your report within 48 hours and work with you on a resolution prior to any public disclosure.
+
