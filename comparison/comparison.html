@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wispr Flow Comparison</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 0; background: #0b1020; color: #e8ecf3; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
+    h1, h2, h3 { color: #ffffff; }
+    .hero { background: linear-gradient(135deg, #18223f, #0f6b8a); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .card { background: #121a30; border: 1px solid #24304f; border-radius: 16px; padding: 20px; margin: 18px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #203055; color: #cfe0ff; font-size: 12px; margin-right: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; overflow: hidden; border-radius: 12px; }
+    th, td { border: 1px solid #2a3658; padding: 12px; text-align: left; vertical-align: top; }
+    th { background: #1a2644; }
+    tr:nth-child(even) { background: #10182d; }
+    code { background: #0b1224; padding: 2px 6px; border-radius: 6px; color: #9ed0ff; }
+    ul { line-height: 1.6; }
+    .good { color: #79e2a7; font-weight: 600; }
+    .warn { color: #ffd479; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Wispr Flow Comparison</h1>
+      <p>This page compares <strong>Wispr Flow</strong>, the current free local <strong>wispr_free</strong> project, <strong>faster-whisper</strong>, and the <strong>SpeechRecognition</strong> Python library.</p>
+      <span class="pill">Product view</span>
+      <span class="pill">Engine view</span>
+      <span class="pill">Free vs paid</span>
+      <span class="pill">Current project architecture</span>
+    </div>
+
+    <div class="card">
+      <h2>Quick summary</h2>
+      <div class="grid">
+        <div>
+          <h3>Wispr Flow</h3>
+          <p>A polished paid dictation product. The value is not just transcription — it is the whole experience.</p>
+        </div>
+        <div>
+          <h3>Current free project</h3>
+          <p>A local Python MVP that records audio, transcribes it, lightly cleans it, and pastes it into the active app.</p>
+        </div>
+        <div>
+          <h3>faster-whisper</h3>
+          <p>The actual speech-to-text engine used in the current project.</p>
+        </div>
+        <div>
+          <h3>SpeechRecognition</h3>
+          <p>A wrapper library that helps connect audio to recognizers, but it is not itself the strongest STT model.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Comparison matrix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>What it is</th>
+            <th>Cost</th>
+            <th>Local?</th>
+            <th>Main role</th>
+            <th>Strengths</th>
+            <th>Weaknesses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wispr Flow</td>
+            <td>Commercial product</td>
+            <td>Paid</td>
+            <td>Unknown / likely mixed</td>
+            <td>Complete dictation experience</td>
+            <td class="good">Polished UX, likely strong cleanup, smoother end-to-end workflow</td>
+            <td class="warn">Paid, closed implementation, less customizable</td>
+          </tr>
+          <tr>
+            <td>Current free project</td>
+            <td>Local Python MVP</td>
+            <td>Free</td>
+            <td>Yes</td>
+            <td>Record → transcribe → paste</td>
+            <td class="good">Free, local control, customizable, usable now</td>
+            <td class="warn">Still rough, weaker punctuation cleanup, less polished UX</td>
+          </tr>
+          <tr>
+            <td>faster-whisper</td>
+            <td>Speech-to-text engine</td>
+            <td>Free</td>
+            <td>Yes</td>
+            <td>Convert speech to text</td>
+            <td class="good">Modern quality, local inference, better core STT path</td>
+            <td class="warn">Needs integration work, model-size vs latency tradeoff</td>
+          </tr>
+          <tr>
+            <td>SpeechRecognition</td>
+            <td>Python interface library</td>
+            <td>Free</td>
+            <td>Depends on backend</td>
+            <td>Convenient audio recognition API</td>
+            <td class="good">Easy to prototype, simple API</td>
+            <td class="warn">Not itself the best modern engine, backend-dependent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>How the current free project works</h2>
+      <ul>
+        <li>Hotkey starts recording</li>
+        <li>Audio is captured with <code>sounddevice</code></li>
+        <li>Audio is saved with <code>soundfile</code></li>
+        <li><code>faster-whisper</code> transcribes the speech</li>
+        <li>A light cleanup function improves the raw text a little</li>
+        <li>The result is pasted into the active app using <code>pyperclip</code> + <code>pyautogui</code></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Why faster-whisper was chosen</h2>
+      <p><code>faster-whisper</code> is the better core choice when the goal is a free local dictation app with stronger transcription quality. <code>SpeechRecognition</code> is useful as a wrapper library, but it is not the same thing as a strong transcription engine.</p>
+    </div>
+
+    <div class="card">
+      <h2>Where Wispr Flow is likely still ahead</h2>
+      <ul>
+        <li>Better punctuation restoration</li>
+        <li>Better grammar smoothing and rewrite quality</li>
+        <li>Lower-latency product feel</li>
+        <li>More reliable app-wide insertion</li>
+        <li>Much better UX polish</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Best next upgrades for the free project</h2>
+      <ol>
+        <li>Try a stronger Whisper model like <code>small</code></li>
+        <li>Add a better cleanup pipeline</li>
+        <li>Add a correction dictionary for repeated mistakes</li>
+        <li>Add optional polish/rewrite mode</li>
+        <li>Add hold-to-talk or silence auto-stop</li>
+        <li>Add tray icon and settings UI</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

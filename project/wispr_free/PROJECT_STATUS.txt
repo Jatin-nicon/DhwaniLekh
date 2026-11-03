@@ -1,0 +1,12 @@
+Status: MVP created.
+
+Current features:
+- local hotkey dictation
+- offline/local transcription path via faster-whisper
+- basic text cleanup
+- auto-paste into the active app
+
+Immediate test:
+- run `run_wispr_free.bat`
+- use `Ctrl+Space` to start recording
+- use `Ctrl+Space` again to stop and paste

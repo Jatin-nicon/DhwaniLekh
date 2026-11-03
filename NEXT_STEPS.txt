@@ -1,0 +1,2 @@
+Next suggested step:
+Design the exact Version 1 architecture and choose the transcription engine between faster-whisper and whisper.cpp.

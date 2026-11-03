@@ -1,0 +1,1 @@
+We can build a fully free local dictation tool that lets you press a hotkey, speak, convert speech to text on your own computer, and paste it anywhere — with no subscription and no paid service. We can also add basic text cleanup, formatting commands, and simple app control by using free and open-source local tools instead of paid cloud products.
